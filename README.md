@@ -25,6 +25,49 @@ docker-compose up --build
 docker-compose down
 ```
 
+4. Para acessar o Apache Airflow, pelo browser utilize:
+
+```
+http://localhost:8080
+```
+
+5. Para acessar a plataforma do Apache Airflow, uilize estas credenciais:
+
+__Username (Usuário)__:
+
+
+```
+airflow
+```
+
+__Password (Senha)__:
+
+```
+airflow
+```
+
+6. Para acessar o MongoDB visualmente é necessario que seja utilizando o MongoDB Compass:
+
+- Utilize este link para efetuar o download do Compass:
+
+```
+https://www.mongodb.com/products/tools/compass
+```
+- Quando finalizar a instalação do Compass utilize as credenciais utilizada no docker-compose.yml, caso não tenha alterado utilize  esta string de conexão:
+
+```
+mongodb://root:password@127.0.0.1:27017/
+```
+
+- Caso tenha alterado segue a estrutura da string de conexão:
+
+```
+mongodb://{USUARIO}:{SENHA}@{IP_DA_MAQUINA}:{PORTA}/
+```
+
+7. Para iniciar o processo de inserção dos dados no banco de dados, vá ate o Airflow, no localhost, vá em DAGs, e clique na DAG "dag_mongo_insert", clique em "Trigger DAG", localizado na parte superior direita da tela.
+
+
 ## Estrutura do Projeto
 
 Este projeto esta organizado em diretórios que contêm arquivos essenciais para a criação, configuração e execução dos containers Docker.
@@ -36,3 +79,4 @@ Este projeto esta organizado em diretórios que contêm arquivos essenciais para
 * __/dags__: Esta pasta contêm os arquivos dags em python que seram executados pelo Apache Airflow;
 * __/logs__: Esta pasta contêm os logs de quando o Apache Airflow ira rodar;
 * __/pligins__: Esta pasta contêm os arquivo ou pastas para os plugins que seram utilizadas no projeto.
+
